@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="">
+    <div class="container">
+
+        <!-- Theme buttons -->
+        <div class="theme-box">
+            <div class="theme theme-royal" onclick="setTheme('theme-royal')"></div>
+            <div class="theme theme-aesthetic" onclick="setTheme('theme-aesthetic')"></div>
+            <div class="theme theme-night" onclick="setTheme('theme-night')"></div>
+            <div class="theme theme-sunset" onclick="setTheme('theme-sunset')"></div>
+            <div class="theme theme-ocean" onclick="setTheme('theme-ocean')"></div>
+        </div>
+
+        <!-- Input Section -->
+        <div class="writer">
+            <input type="text" class="text" id="input" placeholder="Enter task..." required>
+            <input type="date" id="dateInput">
+            <input type="time" id="timeInput">
+            <input type="submit" class="inputbtn" value="Add" onclick="addValue()">
+            <button class="listbtn" id="showBtn" onclick="showValue()">Check list</button>
+        </div>
+
+        <!-- Task list -->
+        <div class="list" id="listBox">
+            <span class="x">X</span>
+            <ul class="textbox" id="textlist"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"> </script>
+</body>
+</html>

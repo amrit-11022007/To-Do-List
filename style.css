@@ -1,0 +1,284 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100%;
+    overflow: hidden;
+}
+
+:root {
+    --bg-color: blueviolet;
+    --text-color: white;
+    --primary-color: white;
+    --accent-color: blueviolet;
+    --list-color: black;
+}
+
+.theme-box {
+    position: fixed;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    flex-direction: column;
+    gap: 10px;
+}
+
+.theme {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid #ccc;
+}
+
+.theme-royal {
+    background-color: #191970;
+}
+
+.theme-aesthetic {
+    background-color: #2d6a4f;
+}
+
+.theme-night {
+    background-color: #121212;
+}
+
+.theme-sunset {
+    background-color: #ff6f61;
+}
+
+.theme-ocean {
+    background-color: #0077b6;
+}
+
+.theme-aesthetic {
+    --bg-color: #2d6a4f;
+    --text-color: white;
+    --primary-color: #e6f5ea;
+    --accent-color: #2d6a4f;
+    --list-color: #1b4332;
+}
+
+.theme-night {
+    --bg-color: #121212;
+    --text-color: #f5f5f5;
+    --primary-color: #fff;
+    --accent-color: #2a2a2a;
+    --list-color: #000;
+}
+
+.theme-royal {
+    --bg-color: #191970;
+    --text-color: #ffd700;
+    --primary-color: #fff;
+    --accent-color: #191970;
+    --list-color: #000;
+}
+
+.theme-sunset {
+    --bg-color: #fd5d4e;
+    --text-color: #fff;
+    --primary-color: #fffaf0;
+    --accent-color: #fd5d4e;
+    --list-color: #000;
+}
+
+.theme-ocean {
+    --bg-color: #0077b6;
+    --text-color: #fff;
+    --primary-color: #ffffff;
+    --accent-color: #191970;
+    --list-color: #000;
+}
+
+.container {
+    background-color: var(--bg-color);
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.writer {
+    position: fixed;
+    border: none;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    color: black;
+    padding: 30px;
+    width: fit-content;
+    height: fit-content;
+    transition: 0.4s ease-in-out;
+    max-width: 90%;
+}
+
+.writer .text {
+    position: relative;
+    outline: none;
+    display: inline-block;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px 0 0 5px;
+    padding: 20px;
+    height: 50px;
+    width: 35vw;
+    margin: 10px 0 10px 10px;
+}
+
+.writer .text:focus {
+    box-shadow: 0 0 8px var(--bg-color);
+}
+
+.writer #dateInput {
+    position: relative;
+    outline: none;
+    display: inline-block;
+    border: 1px solid var(--accent-color);
+    padding: 20px;
+    height: 50px;
+    width: 15vw;
+    margin: 10px 0 10px 0;
+}
+
+.writer #timeInput {
+    position: relative;
+    outline: none;
+    display: inline-block;
+    border: 1px solid var(--accent-color);
+    padding: 20px;
+    height: 50px;
+    width: 15vw;
+    margin: 10px 0 10px 0;
+}
+
+.writer .inputbtn {
+    position: relative;
+    display: inline-block;
+    margin: 10px 10px 10px 0;
+    height: 50px;
+    width: 15vw;
+    border-radius: 0 5px 5px 0;
+    border: none;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.writer .inputbtn:active {
+    transform: scale(1.03);
+    box-shadow: 0 0 8px var(--bg-color);
+}
+
+.writer .listbtn {
+    display: none;
+    margin: 10px;
+    position: relative;
+    height: 50px;
+    width: 15vw;
+    border-radius: 5px;
+    border: none;
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.writer .listbtn:active {
+    transform: scale(1.03);
+    box-shadow: 0 0 8px var(--bg-color);
+}
+
+.list {
+    position: fixed;
+    border: none;
+    border-radius: 5px;
+    display: none;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: var(--primary-color);
+    color: black;
+    padding: 30px;
+    width: 70vw;
+    height: fit-content;
+    max-height: 500px;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.list:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+    transform: translateY(-2px);
+    transition: 0.2s ease-in-out;
+}
+
+.list .x {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    cursor: pointer;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    padding: 5px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    border-radius: 4px;
+    justify-content: center;
+}
+
+.textbox {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    padding: 30px;
+    gap: 10px;
+}
+
+.textbox li {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+    height: 40px;
+    border: 1px solid var(--bg-color);
+    border-radius: 5px;
+    padding-left: 10px;
+    background-color: var(--primary-color);
+    color: var(--list-color);
+}
+
+.textbox li span {
+    color: var(--list-color);
+    margin: 0 10px 0 10px;
+    padding: 10px;
+}
+
+.textbox li small {
+    color: var(--list-color);
+    margin: 0 10px 0 10px;
+    padding: 10px;
+    position: relative;
+    right: 0;
+}
+
+.delete-button {
+    position: absolute;
+    right: 0;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+    background-color: var(--bg-color);
+    border: none;
+    border-radius: 0 5px 5px 0;
+    color: var(--text-color);
+}
